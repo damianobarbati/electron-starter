@@ -1,6 +1,6 @@
 {
-    "name": "autoupdater-bug",
-    "repository": "https://github.com/damianobarbati/autoupdater-bug.git",
+    "name": "electron-starter",
+    "repository": "https://github.com/damianobarbati/electron-starter.git",
     "version": "0.1.0",
     "main": "index.js",
     "scripts": {
@@ -43,7 +43,7 @@
     "eslintConfig": {
         "parser": "babel-eslint",
         "parserOptions": {
-            "ecmaVersion": 2017,
+            "ecmaVersion": 2019,
             "sourceType": "module",
             "impliedStrict": true
         },
@@ -58,12 +58,12 @@
         ]
     },
     "dependencies": {
-        "electron-log": "^2.2.15",
-        "electron-updater": "^3.0.3"
+        "electron": "^5.0.2",
+        "electron-log": "^3.0.5",
+        "electron-updater": "^4.0.6"
     },
     "devDependencies": {
         "babel-eslint": "^10.0.1",
-        "electron": "^3.0.4",
         "electron-builder": "^20.24.3",
         "eslint": "^5.0.1",
         "eslint-loader": "^2.0.0"
