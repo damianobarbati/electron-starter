@@ -1,0 +1,9 @@
+*.log
+.idea/
+*.iml
+dist/
+node_modules/
+logs/
+.log
+.DS_Store
+.Spotlight-V100

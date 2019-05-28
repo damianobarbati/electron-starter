@@ -1,0 +1,71 @@
+{
+    "name": "autoupdater-bug",
+    "repository": "https://github.com/damianobarbati/autoupdater-bug.git",
+    "version": "0.1.0",
+    "main": "index.js",
+    "scripts": {
+        "build:dev": "NODE_ENV=development electron --js-flags='--harmony' ./index.js",
+        "pack:dev": "rm -rf ./dist/*; electron-builder --mac"
+    },
+    "v8Flags": "--harmony",
+    "build": {
+        "generateUpdatesFilesForAllChannels": true,
+        "publish": {
+            "provider": "github",
+            "vPrefixedTagName": false,
+            "releaseType": "release"
+        },
+        "directories": {
+            "output": "./dist"
+        },
+        "mac": {
+            "target": [
+                "dmg",
+                "zip"
+            ],
+            "type": "distribution"
+        },
+        "dmg": {
+            "contents": [
+                {
+                    "x": 135,
+                    "y": 170
+                },
+                {
+                    "x": 415,
+                    "y": 170,
+                    "type": "link",
+                    "path": "/Applications"
+                }
+            ]
+        }
+    },
+    "eslintConfig": {
+        "parser": "babel-eslint",
+        "parserOptions": {
+            "ecmaVersion": 2017,
+            "sourceType": "module",
+            "impliedStrict": true
+        },
+        "env": {
+            "browser": true,
+            "node": true,
+            "jest": true,
+            "es6": true
+        },
+        "extends": [
+            "eslint:recommended"
+        ]
+    },
+    "dependencies": {
+        "electron-log": "^2.2.15",
+        "electron-updater": "^3.0.3"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.0.1",
+        "electron": "^3.0.4",
+        "electron-builder": "^20.24.3",
+        "eslint": "^5.0.1",
+        "eslint-loader": "^2.0.0"
+    }
+}
