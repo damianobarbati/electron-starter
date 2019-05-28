@@ -58,11 +58,11 @@
         ]
     },
     "dependencies": {
-        "electron": "^5.0.2",
         "electron-log": "^3.0.5",
         "electron-updater": "^4.0.6"
     },
     "devDependencies": {
+        "electron": "^5.0.2",
         "babel-eslint": "^10.0.1",
         "electron-builder": "^20.24.3",
         "eslint": "^5.0.1",
