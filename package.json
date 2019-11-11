@@ -1,71 +1,22 @@
 {
     "name": "electron-starter",
-    "repository": "https://github.com/damianobarbati/electron-starter.git",
     "version": "0.1.0",
-    "main": "index.js",
+    "license": "UNLICENSED",
+    "author": "Damiano Barbati <damiano.barbati@gmail.com> (http://github.com/damianobarbati)",
+    "repository": "https://github.com/damianobarbati/electron-starter.git",
+    "main": "src/index.js",
     "scripts": {
-        "build:dev": "NODE_ENV=development electron --js-flags='--harmony' ./index.js",
-        "pack:dev": "rm -rf ./dist/*; electron-builder --mac"
-    },
-    "v8Flags": "--harmony",
-    "build": {
-        "generateUpdatesFilesForAllChannels": true,
-        "publish": {
-            "provider": "github",
-            "vPrefixedTagName": false,
-            "releaseType": "release"
-        },
-        "directories": {
-            "output": "./dist"
-        },
-        "mac": {
-            "target": [
-                "dmg",
-                "zip"
-            ],
-            "type": "distribution"
-        },
-        "dmg": {
-            "contents": [
-                {
-                    "x": 135,
-                    "y": 170
-                },
-                {
-                    "x": 415,
-                    "y": 170,
-                    "type": "link",
-                    "path": "/Applications"
-                }
-            ]
-        }
-    },
-    "eslintConfig": {
-        "parser": "babel-eslint",
-        "parserOptions": {
-            "ecmaVersion": 2019,
-            "sourceType": "module",
-            "impliedStrict": true
-        },
-        "env": {
-            "browser": true,
-            "node": true,
-            "jest": true,
-            "es6": true
-        },
-        "extends": [
-            "eslint:recommended"
-        ]
+        "build:dev": "NODE_ENV=development electron -r esm src/index.js",
+        "pack:dev": "rm -rf ./dist/* && electron-builder --mac"
     },
     "dependencies": {
-        "electron-log": "^3.0.5",
-        "electron-updater": "^4.0.6"
+        "electron-log": "^3.0.9",
+        "electron-updater": "^4.2.0",
+        "esm": "^3.2.25"
     },
     "devDependencies": {
-        "electron": "^5.0.2",
-        "babel-eslint": "^10.0.1",
-        "electron-builder": "^20.24.3",
-        "eslint": "^5.0.1",
-        "eslint-loader": "^2.0.0"
+        "electron": "^7.1.1",
+        "electron-builder": "^22.1.0",
+        "eslint": "^6.6.0"
     }
 }

@@ -1,0 +1,23 @@
+{
+    "mac": {
+        "target": [
+            "dmg",
+            "zip"
+        ],
+        "type": "distribution"
+    },
+    "dmg": {
+        "contents": [
+            {
+                "x": 135,
+                "y": 170
+            },
+            {
+                "x": 415,
+                "y": 170,
+                "type": "link",
+                "path": "/Applications"
+            }
+        ]
+    }
+}
